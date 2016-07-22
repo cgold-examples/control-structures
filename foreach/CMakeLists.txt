@@ -1,0 +1,41 @@
+cmake_minimum_required(VERSION 2.8)
+project(foo NONE)
+
+message("Explicit list:")
+foreach(item "A" "B" "C")
+  message("  ${item}")
+endforeach()
+
+message("Dereferenced list:")
+set(mylist "foo" "boo" "bar")
+foreach(x ${mylist})
+  message("  ${x}")
+endforeach()
+
+message("Empty list")
+foreach(x)
+  message("  ${x}")
+endforeach()
+
+message("Dereferenced empty list")
+set(empty_list)
+foreach(x ${empty_list})
+  message("  ${x}")
+endforeach()
+
+message("List with empty element:")
+foreach(i "")
+  message("  '${i}'")
+endforeach()
+
+message("Separate lists:")
+set(mylist a b c)
+foreach(x "${mylist}" "x;y;z")
+  message("  ${x}")
+endforeach()
+
+message("Combined list:")
+set(combined_list "${mylist}" "x;y;z")
+foreach(x ${combined_list})
+  message("  ${x}")
+endforeach()

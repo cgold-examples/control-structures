@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.2)
+project(foo NONE)
+
+message("Loop with 'continue':")
+foreach(x RANGE 10)
+  if(x EQUAL 2 OR x EQUAL 5)
+    message("  skip ${x}")
+    continue()
+  endif()
+  message("  process ${x}")
+endforeach()
