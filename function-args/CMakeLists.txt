@@ -1,0 +1,27 @@
+cmake_minimum_required(VERSION 2.8)
+project(foo NONE)
+
+function(foo x y z)
+  message("Calling function 'foo':")
+  message("  x = ${x}")
+  message("  y = ${y}")
+  message("  z = ${z}")
+endfunction()
+
+function(boo x y z)
+  message("Calling function 'boo':")
+  message("  x = ${ARGV0}")
+  message("  y = ${ARGV1}")
+  message("  z = ${ARGV2}")
+  message("  total = ${ARGC}")
+endfunction()
+
+function(bar x y z)
+  message("Calling function 'bar':")
+  message("  All = ${ARGV}")
+  message("  Unexpected = ${ARGN}")
+endfunction()
+
+foo("1" "2" "3")
+boo("4" "5" "6")
+bar("7" "8" "9" "10" "11")
