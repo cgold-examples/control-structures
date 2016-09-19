@@ -65,4 +65,7 @@ message("*** Run (2) ***")
 foo(L2 item1 item3 Y abc Z 123 FOO BOO)
 
 message("*** Run (3) ***")
+foo(L1 item1 L1 item2 L1 item3)
+
+message("*** Run (4) ***")
 boo(PARAM1 123 PARAM2 888)
